@@ -13,5 +13,13 @@ This example app shows how to use *Selvy Handwriting SDK* for Android
 ## Documentation
 The *Selvy Handwriting SDK* API documentation is available on [Selvy Handwriting website](http://handwriting.selvasai.com)
 
+## Screenshot
+* Launch example app
+![](/screenshot-1.png)
+* Write korean and english
+![](/screenshot-2.png)
+* Result
+![](/screenshot-3.png)
+
 ## License
 © 2019. [SELVAS AI Inc.](http://www.selvasai.com) All Rights Reserved.
