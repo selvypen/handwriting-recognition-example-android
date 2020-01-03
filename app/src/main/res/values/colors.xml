@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorStroke">#00abf9</color>
+    <color name="colorCanvas">#ffffff</color>
+    <color name="colorGuideText">#eeeeee</color>
+</resources>

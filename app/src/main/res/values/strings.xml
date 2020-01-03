@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Handwriting Example</string>
+    <string name="koreanEnglish">Korean + English</string>
+    <string name="english">English</string>
+    <string name="chinese">Chinese</string>
+    <string name="japanese">Japanese</string>
+    <string name="recognize">Recognize</string>
+    <string name="clear">Clear</string>
+    <string name="writeHere">Write here.</string>
+</resources>

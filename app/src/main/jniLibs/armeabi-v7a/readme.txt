@@ -1,0 +1,1 @@
+Place shared library files(*.so) here

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">필기인식 예제</string>
+    <string name="koreanEnglish">한국어 + 영어</string>
+    <string name="english">영어</string>
+    <string name="chinese">중국어</string>
+    <string name="japanese">일본어</string>
+    <string name="recognize">필기인식</string>
+    <string name="clear">지우기</string>
+    <string name="writeHere">여기에 필기하세요.</string>
+</resources>
