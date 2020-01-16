@@ -1,5 +1,5 @@
 /*!
- *  @date 2019/01/02
+ *  @date 2020/01/02
  *  @file WritingRecognizer.java
  *  @author SELVAS AI
  *
@@ -124,14 +124,6 @@ public class WritingRecognizer {
         final int MAX_VERSION_LENGTH = 64;
         char[] version = new char[MAX_VERSION_LENGTH];
         DHWR.GetRevision(version);
-
-        int versionLength = 0;
-        for (int i = 0; i < MAX_VERSION_LENGTH; i++) {
-            if (version[i] == '\0') {
-                versionLength = i;
-                break;
-            }
-        }
-        return String.valueOf(version, 0, versionLength);
+        return String.valueOf(version).trim();
     }
 }
