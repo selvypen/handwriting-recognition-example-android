@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Handwriting Example</string>
+    <string name="app_name">Handwriting Recognition Example</string>
     <string name="koreanEnglish">Korean + English</string>
     <string name="english">English</string>
     <string name="chinese">Chinese</string>
