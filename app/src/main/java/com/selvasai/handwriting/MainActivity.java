@@ -27,6 +27,7 @@ public class MainActivity extends Activity {
 
     private WritingRecognizer mWritingRecognizer;
     private WritingView mWritingView;
+    private TextView mVersion;
     private TextView mCandidates;
 
     @Override
@@ -78,6 +79,8 @@ public class MainActivity extends Activity {
             });
         }
 
+        mVersion = (TextView) findViewById(R.id.version);
+		mVersion.setText(mWritingRecognizer.getVersion());
         mCandidates = (TextView) findViewById(R.id.candidates);
     }
 
