@@ -1,16 +1,16 @@
 /*!
- *  @mainpage DHWR APIs Document
+ *  @mainpage Selvy Pen SDK for Text APIs Document
  *
  *  @section intro_sec Introduction
- *  본 문서는 SELVAS AI의 필기인식 솔루션인 DHWR(DioPen HandWriting Recognition)의 API 가이드이다. \n
- *  DHWR은 손으로 필기한 글씨를 인식하여 Digital Text로 변경해 주는 솔루션이다. \n
- *  표준 C언어 기반의 라이브러리로 Android, iOS, Tizen, Windows, Linux 등의 플랫폼을 지원하며, 
+ *  본 문서는 SELVAS AI의 필기인식 솔루션인 Selvy Pen SDK for Text의 API 가이드이다. \n
+ *  Selvy Pen SDK for Text는 손으로 필기한 글씨를 인식하여 Digital Text로 변경해 주는 솔루션이다. \n
+ *  표준 C언어 기반의 라이브러리로 Android, iOS, Tizen, Windows, Linux 등의 플랫폼을 지원하며,
  *  그 외 플랫폼 및 Non-OS는 커스터마이징을 통해 지원이 가능하다.\n
  *  전 세계 73개 언어의 필기인식이 가능하며, 필기 방식에 따라 다음과 같이 인식 언어를 제공한다.
- *    - 낱자 쓰기 인식 : 낱자 한 글자만 쓰고 인식하는 방식 (73개 언어)
- *    - 정자 쓰기 인식 : 낱자를 연속해서 필기하고 인식하는 방식 (54개 언어)
- *    - 흘려 쓰기 인식 : 여러 낱자 및 단어를 연속된 획으로 이어쓴 후 인식하는 방식 (50개 언어)
- *    - 겹쳐 쓰기 인식 : 협소한 필기 영역에 겹쳐서 쓴 글자를 인식하는 방식 (9개 언어)
+ *    - 낱자 쓰기 인식 : 낱자 한 글자만 쓰고 인식하는 방식
+ *    - 정자 쓰기 인식 : 낱자를 연속해서 필기하고 인식하는 방식
+ *    - 흘려 쓰기 인식 : 여러 낱자 및 단어를 연속된 획으로 이어쓴 후 인식하는 방식
+ *    - 겹쳐 쓰기 인식 : 협소한 필기 영역에 겹쳐서 쓴 글자를 인식하는 방식
  *
  *  @section install_sec Setting
  *  @subsection event_sec Touch Event
@@ -38,10 +38,11 @@
  *    - libdhwr.so, libdhwr-base.so, libdhwr-core.so : 필기인식 엔진 Main 라이브러리
  *    - llibdhwr-xxxx.so : 동적으로 로드 되는 Sub 라이브러리, 파일의 path를 SetExternalLibraryPath()의 파라미터로 설정해야 한다.
  *    - xx_XX.hdb : 각 언어의 인식을 위한 리소스 파일, 파일의 path를 SetExternalResourcePath()의 파라미터로 설정해야 한다.
- *    - dhwr.key : License를 위한 key 파일로써, key파일이 없으면 필기인식 엔진은 동작하지 않는다. 파일명을 포함한 path를 Create()의 파라미터로 설정해야 한다
+ *    - license.key : License를 위한 key 파일로써, key파일이 없으면 필기인식 엔진은 동작하지 않는다. 파일명을 포함한 path를 Create()의 파라미터로 설정해야 한다
  *
  *  @section link_sec Link
- *  SELVAS AI http://www.selvasai.com/
+ *  SELVAS AI http://www.selvasai.com/ \n
+ *  Selvy Pen SDK Developers http://handwriting.selvasai.com
  */
 
 /*!
@@ -52,9 +53,9 @@
  *  Copyright (c) 2016 by SELVAS AI Inc. All rights reserved.
  */
 
-/*! 
+/*!
  *  @example example.java
- *  DHWR API를 이용하여 Android에서 필기인식을 사용하는 예제\n
+ *  Selvy Pen SDK for Text의 API를 이용하여 Android에서 필기인식을 사용하는 예제\n
  *  손글씨로 필기한 알파벳 'a'와 한글 '안녕하세요'의 좌표 값을 입력으로 받아 문자로 인식한 후 그 결과를 로그로 출력하도록 구현한 소스이다.
  */
 
@@ -77,7 +78,7 @@ public class DHWR {
     /**
      * @defgroup  PublicStaticAttributes Public Static Attributes
      * @brief     API 사용 시 파리미터나 리턴값으로 사용 가능한 상수값들이 정의되어 있다.
-     * @details     @ref Gesture "Gesture"는 인식 가능한 제스처의 목록이, @ref ErrorCode "Error Code"는 API에서 리턴 가능한 값들이 정의되어 있다. 
+     * @details     @ref Gesture "Gesture"는 인식 가능한 제스처의 목록이, @ref ErrorCode "Error Code"는 API에서 리턴 가능한 값들이 정의되어 있다.
      * @ref LanguageMode "Language Mode", @ref LanguageType "Language Type", @ref RecognitionMode "Recognition Mode"는 인식할 대상 언어와 인식 방식을 설정할 수 있는 값들이 정의되어 있다.
      */
 
@@ -117,7 +118,7 @@ public class DHWR {
         return (1 << n);
     }
 
-    //--------- Error Code ---------//    
+    //--------- Error Code ---------//
     /**
      * @defgroup  ErrorCode Error Code
      * @ingroup   PublicStaticAttributes
@@ -940,12 +941,6 @@ public class DHWR {
 
     /*@{*/
     /*!
-     *  @brief 사용 가능한 언어 목록을 반환한다
-     *  @return 언어 목록 문자열
-     */
-    public final static native String AvailableLanguageList();
-
-    /*!
      *  @brief 엔진내부에서 사용하는 외부라이브러리의 경로 설정
      *  @warning Create()를 실행한 이후에 호출해야 한다
      *  @param [in] path 외부라이브러리의 경로
@@ -964,31 +959,6 @@ public class DHWR {
      *  @endcode
      */
     public final static native int SetExternalResourcePath(char[] path);
-
-    /*!
-     *  @brief SetExternalResourcePath()와 동일한 기능으로, 리소스 파일의 경로를 설정한다.
-     *  @remarks SetExternalResourcePath()는 preload된 리소스 파일의 경로를 지정할 때 사용하고,
-     *           SetExtendExternalResourcePath()는 외부에서 download 받은 리소스 파일의 경로를 지정하는 용도로 사용한다.\n
-     *           리소스 파일을 읽어들일 때는 SetExtendExternalResourcePath()로 지정된 경로에서 먼저 리소스 파일을 찾고, 없을 경우
-     *           SetExternalResourcePath()로 지정된 경로에서 리소스 파일을 로드 한다.
-     *  @warning Create()를 실행한 이후에 호출해야 한다
-     *  @param [in] path 리소스 경로
-     *  @return @ref ErrorCode "Error Code"
-     *  @par &nbsp;&nbsp;&nbsp;example
-     *  @code
-     *  DHWR.SetExtendExternalResourcePath("/data/data/package-name/downloaded-hdb/".toCharArray());
-     *  @endcode
-     */
-    public final static native int SetExtendExternalResourcePath(char[] path);
-
-    /*!
-     *  @brief SetExtendExternalResourcePath()의 사용 여부를 결정한다.
-     *  @remarks false가 기본 값이므로 preload와 download 한 외부리소스 경로가 동일하다면, 또는 preload 만 사용한다면, 명시적으로 false를 호출해 줄 필요는 없다.
-     *  @param [in] isUseDownloadPath 다운로드 받은 외부리소스를 기존 외부리소스와 다른 경로로 설정할 것이라면 true, 
-     *                                           기존 외부리소스와 동일한 경로에 다운로드 받는다면 false로 설정한다.
-     *  @return @ref ErrorCode "Error Code"
-     */
-    public final static native int SetUseDownloadResourcePath(boolean isUseDownloadPath);
 
     /*!
      *  @brief 특정 타입의 파라미터 값을 가져옴
@@ -1012,15 +982,6 @@ public class DHWR {
      *  @return @ref ErrorCode "Error Code"
      */
     public final static native int GetRevision(char[] revision);
-
-    /*!
-     *  @brief 리소스 파일의 기준 버전을 가져옴\n
-     *           현재 엔진에서 사용 가능한 리소스(HDB) 파일의 버전을 확인 할 수 있다.
-     *  @param [out] version 리소스(HDB) 버전
-     *  @return @ref ErrorCode "Error Code"
-     *  @warning GetHDBBaseVersion()로 얻어온 버전보다 낮은 버전의 리소스(HDB) 파일을 사용할 경우, 필기인식 엔진이 정상동작하지 않을 수 있다.
-     */
-    public final static native int GetHDBBaseVersion(char[] version);
 
     /*!
      *  @brief License key에 설정된 엔진의 due date를 가져온다
