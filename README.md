@@ -7,7 +7,7 @@ This example app shows how to recognize handwritten text using the **Selvy Pen S
 
 ## Getting started
 1. Download **Selvy Pen SDK for Text** and License key.<br>
-   go to [http://handwriting.selvasai.com/text/download.html](http://handwriting.selvasai.com/download.html)
+   go to [http://handwriting.selvasai.com/text/download.html](http://handwriting.selvasai.com/text/download.html)
 1. Place *.so files in `app/src/main/jniLibs/arm64-v8a` or `armeabi-v7a`
 1. Place *.hdb files in `app/src/main/assets/hdb`
 1. Place a License file in `app/src/main/assets/hdb`
