@@ -9,6 +9,7 @@
 package com.selvasai.handwriting;
 
 import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -80,7 +81,9 @@ public class MainActivity extends Activity {
         }
 
         mVersion = (TextView) findViewById(R.id.version);
-        mVersion.setText(mWritingRecognizer.getVersion());
+        mVersion.setText("Model : " + Build.MODEL + "\n"
+                + "Version : " + mWritingRecognizer.getVersion() + "\n"
+                + "Due date : " + mWritingRecognizer.getDueDate());
         mCandidates = (TextView) findViewById(R.id.candidates);
     }
 

@@ -126,4 +126,11 @@ public class WritingRecognizer {
         DHWR.GetRevision(version);
         return String.valueOf(version).trim();
     }
+
+    public int getDueDate() {
+        int[] dueDate = new int[1];
+        dueDate[0] = -1;
+        DHWR.GetDueDate(dueDate);
+        return dueDate[0];
+    }
 }
